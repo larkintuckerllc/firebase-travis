@@ -8,4 +8,5 @@ cache:
   yarn: true
 install:
   - cd ./functions && yarn install && cd ..
+  - cd ./client && yarn install && cd ..
 script: echo "script"
