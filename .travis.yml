@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - lts/*
+install:
+  - echo "install" && exit 0
+
+script:
+  - echo "script" && exit 0
