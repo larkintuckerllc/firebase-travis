@@ -2,6 +2,4 @@ language: node_js
 node_js:
   - lts/*
 install: echo "install" && exit 0
-script: 
-  - echo "script one" && exit 0
-  - echo "script two" && exit 0
+script:  echo "script one" && exit 1 
