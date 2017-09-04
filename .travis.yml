@@ -1,5 +1,5 @@
 language: node_js
 node_js:
   - lts/*
-install: echo "install" && exit 0
+install: echo "install" && exit 1
 script:  echo "script one" && exit 1 
