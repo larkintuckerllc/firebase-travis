@@ -2,13 +2,18 @@ language: node_js
 node_js: lts/*
 sudo: false
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.27.5
-  - export PATH=$HOME/.yarn/bin:$PATH
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.27.5
+- export PATH=$HOME/.yarn/bin:$PATH
 cache:
   yarn: true
 install:
-  - cd ./functions && yarn install && cd ..
-  - cd ./client && yarn install && cd ..
+- cd ./functions && yarn install && cd ..
+- cd ./client && yarn install && cd ..
 script:
-  - cd ./client && yarn build && cd ..
-  - cd ./client && yarn test && cd ..
+- cd ./client && yarn build && cd ..
+- cd ./client && yarn test && cd ..
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: k3WSGAoxx/hZ5G1cGZwwytbhdGw34meKHv/Oo37TSvSVrE5r3yaD50UOmiGKtf57jgqC3BwKi2c6NDewwf2hqjBj8HpZ8uqEJib/WKP2s2uy4fp9c+/CJzSQ61ZGTu5XihTs5wRwXHs4QXahLuKvDcLm7HuYJQQECKyE3Hszn9zNuDAT+w1TDBxhqmiGDgUQeFJxql8FnY1o4aSElRi9zB96wKU/IOBVVjVONvDoXsW62hND/muJFL5+69CUG3QhWi8V7VrXOJ8uilwQ+tTWEk/Oaco/fUslxXOEUtZe/TiFzo4NtH7XoYwZ7bjfu1MvnnzmOhmhvokScJmPKm3CNK9u0PruzwSlG7xXLgdK1W81fR0oKR6RFZMc+BwSZmQ3zImhqOlagZXIAxymEzkVgHXSwATMrerCzmHllMXCnL9+49KL5Iz3LPzAmMnF5GTeGxtq/o+FZWxPRHCC0RRHrZc2PAPj6e3TUsHJ197e1nR7mlH75GtIqNnUVpSRUJAqMc8bjL5L8xrFCaJGi/V0KAhVgg3gRLFXXVj0lK7WLRxl31VFNnEgx7xbx6m/Wky3v8zP46yrbosF40g4r+YHkbgiK9qakvllQxYy6S373L+J4ot18kY+1SqkErHcvigFh1JoTXWwZf1x3G8a7XiZ3Pe+CntoCfOgUjfBKd4nfLo=
